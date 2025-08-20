@@ -1,0 +1,36 @@
+[
+  {
+    "slug": "adaptive-streaming-basics",
+    "title": "Adaptive Streaming Basics",
+    "summary": "How HLS/DASH adapt to your bandwidth in real time.",
+    "videoUrl": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "posterUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Internet_map_1024.jpg/640px-Internet_map_1024.jpg",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/adaptive-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Adaptive bitrate streaming (ABR) breaks video into small segments and delivers the best quality your connection can handle. Protocols like HLS and DASH power most modern video across the web.",
+    "transcript": "Welcome to adaptive streaming basics. In this overview, we explain how players switch between multiple renditions..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+    "posterUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Brain_human_normal_anatomy.jpg/640px-Brain_human_normal_anatomy.jpg",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  }
+]
