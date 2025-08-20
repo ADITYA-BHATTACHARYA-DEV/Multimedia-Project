@@ -20,7 +20,7 @@
     "slug": "multimedia-learning",
     "title": "Multimedia Learning",
     "summary": "Why pairing video with concise text improves retention.",
-    "videoUrl": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+    "videoUrl": "https://test-streams.mux.dev/tears-of-steel/playlist.m3u8",
     "posterUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Brain_human_normal_anatomy.jpg/640px-Brain_human_normal_anatomy.jpg",
     "captions": [
       {
