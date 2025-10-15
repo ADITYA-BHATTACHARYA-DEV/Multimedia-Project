@@ -8,19 +8,25 @@
   outline-offset: 3px;
 }
 
+/* Full height for html/body */
 html, body {
   height: 100%;
+  @apply bg-black text-white; /* default dark background for your Symposia UI */
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  @apply bg-white text-gray-900;
-}
+/* Links */
 a {
-  @apply underline-offset-2;
+  @apply underline-offset-2 hover:underline text-cyan-400 transition-colors duration-200;
 }
+
+/* Default container */
 .container {
-  @apply max-w-4xl mx-auto px-4;
+  @apply max-w-7xl mx-auto px-4 md:px-8;
 }
+
+/* Skip link accessibility */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -28,15 +34,24 @@ a {
   width: 1px;
   height: 1px;
   overflow: hidden;
+  z-index: 50;
 }
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
   width: auto;
   height: auto;
-  background: white;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  @apply bg-white text-black px-3 py-2 rounded-md border border-gray-300 shadow-md;
+}
+
+/* Smooth scroll behavior for better UI feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default transitions for dynamic components */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }

@@ -1,25 +1,13 @@
 'use client';
 
 import VideoPlayer from "@/components/VideoPlayer";
-import { allTopics, Topic } from "@/lib/topics";
+import { Topic } from "@/lib/topics";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-type Props = {
-  params: { slug: string };
-};
+type Props = { topic: Topic };
 
-export default function TopicPage({ params }: Props) {
-  const topic: Topic | undefined = allTopics().find(t => t.slug === params.slug);
-
-  if (!topic) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-white bg-black">
-        <h1 className="text-3xl">Topic not found</h1>
-      </div>
-    );
-  }
-
+export default function TopicDetailsClient({ topic }: Props) {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } },
@@ -28,6 +16,7 @@ export default function TopicPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white py-12 px-4 md:px-12">
       <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-12 max-w-5xl mx-auto">
+
         {/* Header */}
         <header className="text-center space-y-4">
           <motion.h1
