@@ -7,8 +7,6 @@ import { Vortex } from '../../components/ui/vortex';
 import { useAuth } from '../../lib/AuthContext';
 
 // --- Reusable UI Components ---
-
-// A consistent input field component
 const FormInput = ({ id, name, type, placeholder, value, onChange }: any) => (
   <div>
     <label htmlFor={id} className="block text-sm font-medium text-gray-300 mb-1">
@@ -22,13 +20,12 @@ const FormInput = ({ id, name, type, placeholder, value, onChange }: any) => (
       onChange={onChange}
       autoComplete={name}
       required
-      className="w-full px-3 py-2 text-white bg-gray-800 placeholder-gray-500 border border-gray-700 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 focus:border-cyan-500"
+      className="w-full px-3 py-2 text-white bg-gray-800/60 placeholder-gray-400 border border-gray-700 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 focus:border-cyan-500"
       placeholder={`Enter your ${placeholder.toLowerCase()}`}
     />
   </div>
 );
 
-// A submit button that shows a loading state
 const SubmitButton = ({ isLoading, children }: any) => (
   <button
     type="submit"
@@ -46,15 +43,12 @@ const SubmitButton = ({ isLoading, children }: any) => (
   </button>
 );
 
-// A container for the sign-in/sign-up form with animation
 const AuthForm = ({ isNewUser, onSubmit, isLoading }: any) => {
   const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '' });
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
   return (
     <motion.form
       key={isNewUser ? 'signup' : 'signin'}
@@ -75,9 +69,7 @@ const AuthForm = ({ isNewUser, onSubmit, isLoading }: any) => {
   );
 };
 
-
-// --- Main Login Page Component ---
-
+// --- Main Login Page ---
 export default function LoginPage() {
   const [isNewUser, setIsNewUser] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -86,14 +78,11 @@ export default function LoginPage() {
   const handleAuthSubmit = (e: React.FormEvent, formData: any) => {
     e.preventDefault();
     setIsLoading(true);
-
     if (isNewUser && formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       setIsLoading(false);
       return;
     }
-    
-    // Simulate API call
     setTimeout(() => {
       console.log('Form data submitted:', formData);
       login();
@@ -102,42 +91,91 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="mx-auto w-full h-screen overflow-hidden">
-      <Vortex
-        backgroundColor="black"
-    
-        particleCount={500}
-        containerClassName="flex items-center justify-center w-full h-full"
-      >
-        <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/[0.6] border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden">
-          <Meteors number={20} />
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-white">The Symposia</h1>
-            <p className="mt-2 text-sm text-gray-300">
-              {isNewUser
-                ? 'Create a new account to begin'
-                : 'Welcome back! Please sign in.'}
-            </p>
-          </div>
-          
-          <AnimatePresence mode="wait">
-            <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
-          </AnimatePresence>
+    <div className="w-full h-screen overflow-hidden">
 
-          <div className="text-sm text-center">
-            <button
-              onClick={() => setIsNewUser(!isNewUser)}
-              className="font-medium text-cyan-400 hover:text-cyan-300"
-              disabled={isLoading}
-            >
-              {isNewUser
-                ? 'Already have an account? Sign in'
-                : "Don't have an account? Sign up"}
-            </button>
+      {/* MOBILE VIEW */}
+      <div className="block md:hidden">
+        <Vortex
+          backgroundColor="black"
+          particleCount={500}
+          containerClassName="flex items-center justify-center w-full h-full"
+        >
+          <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/[0.6] border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden">
+            <Meteors number={20} />
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-white">The Symposia</h1>
+              <p className="mt-2 text-sm text-gray-300">
+                {isNewUser
+                  ? 'Create a new account to begin'
+                  : 'Welcome back! Please sign in.'}
+              </p>
+            </div>
+
+            <AnimatePresence mode="wait">
+              <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
+            </AnimatePresence>
+
+            <div className="text-sm text-center">
+              <button
+                onClick={() => setIsNewUser(!isNewUser)}
+                className="font-medium text-cyan-400 hover:text-cyan-300"
+                disabled={isLoading}
+              >
+                {isNewUser
+                  ? 'Already have an account? Sign in'
+                  : "Don't have an account? Sign up"}
+              </button>
+            </div>
+          </div>
+        </Vortex>
+      </div>
+
+      {/* DESKTOP VIEW */}
+      <div className="hidden md:flex w-full h-screen">
+        {/* Left Column */}
+        <div className="w-1/2 h-full">
+          <Vortex
+            backgroundColor="rgba(0,0,0,0.05)"
+            particleCount={1000}        // bigger vortex
+            baseHue={210}
+            hueRange={60}
+            baseSpeed={0.0003}          // slower rotation
+            speedRange={0.008}
+            baseRadius={1.5}
+            radiusRange={5}
+            containerClassName="w-full h-full flex items-center justify-start px-24"
+          >
+            <div className="text-white text-left max-w-xl">
+              <h1 className="text-7xl font-bold">The Symposia</h1>
+              <p className="mt-6 text-gray-300 text-lg">
+                Explore a world of innovation and creativity. Join our community and stay inspired.
+              </p>
+            </div>
+          </Vortex>
+        </div>
+
+        {/* Right Column */}
+        <div className="relative w-1/2 h-full bg-black flex items-center justify-center overflow-hidden">
+          <Meteors number={80} className="absolute inset-0 z-0" />
+          <div className="relative w-full max-w-md p-12 space-y-6 bg-white/10 backdrop-blur-xl border border-gray-700 rounded-2xl shadow-lg z-10 mx-8">
+            <AnimatePresence mode="wait">
+              <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
+            </AnimatePresence>
+            <div className="text-sm text-center">
+              <button
+                onClick={() => setIsNewUser(!isNewUser)}
+                className="font-medium text-cyan-400 hover:text-cyan-300"
+                disabled={isLoading}
+              >
+                {isNewUser
+                  ? 'Already have an account? Sign in'
+                  : "Don't have an account? Sign up"}
+              </button>
+            </div>
           </div>
         </div>
-      </Vortex>
+      </div>
+
     </div>
   );
 }
-
