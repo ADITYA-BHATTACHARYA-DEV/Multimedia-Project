@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
 import VideoPlayer from "@/components/VideoPlayer";
 import { findTopic } from "@/lib/topics";
+import { notFound } from "next/navigation";
 
 type Props = { params: { slug: string } };
 
