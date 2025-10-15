@@ -33,6 +33,7 @@ declare namespace __next_route_internal_types__ {
     | `/about`
     | `/login`
     | `/robots.txt`
+    | `/api/groq-chat`
   type DynamicRoutes<T extends string = string> = 
     | `/topics/${SafeSlug<T>}`
 

@@ -14,8 +14,8 @@
     "/topics/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/topics/[slug]/page.js",
-      "static/css/app/topics/[slug]/page.css"
+      "static/css/app/topics/[slug]/page.css",
+      "static/chunks/app/topics/[slug]/page.js"
     ],
     "/about/page": [
       "static/chunks/webpack.js",

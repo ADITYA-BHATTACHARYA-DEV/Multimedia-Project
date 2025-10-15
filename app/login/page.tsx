@@ -43,12 +43,19 @@ const SubmitButton = ({ isLoading, children }: any) => (
   </button>
 );
 
+// --- Auth Form ---
 const AuthForm = ({ isNewUser, onSubmit, isLoading }: any) => {
-  const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '' });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const handleForgotPassword = () => {
+    alert('Password reset link has been sent to your email address (demo only).');
+  };
+
   return (
     <motion.form
       key={isNewUser ? 'signup' : 'signin'}
@@ -59,12 +66,48 @@ const AuthForm = ({ isNewUser, onSubmit, isLoading }: any) => {
       className="space-y-6"
       onSubmit={(e) => onSubmit(e, formData)}
     >
-      <FormInput id="email" name="email" type="email" placeholder="Email address" value={formData.email} onChange={handleChange} />
-      <FormInput id="password" name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+      {/* Name field (only for new users) */}
       {isNewUser && (
-        <FormInput id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} />
+        <FormInput
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+        />
       )}
-      <SubmitButton isLoading={isLoading}>{isNewUser ? 'Sign Up' : 'Sign In'}</SubmitButton>
+
+      <FormInput id="email" name="email" type="email" placeholder="Email address" value={formData.email} onChange={handleChange} />
+      <div>
+        <FormInput id="password" name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+
+        {/* Forgot Password (only show when NOT new user) */}
+        {!isNewUser && (
+          <button
+            type="button"
+            onClick={handleForgotPassword}
+            className="mt-2 text-sm text-cyan-400 hover:text-cyan-300 focus:outline-none"
+          >
+            Forgot Password?
+          </button>
+        )}
+      </div>
+
+      {isNewUser && (
+        <FormInput
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirm Password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+        />
+      )}
+
+      <SubmitButton isLoading={isLoading}>
+        {isNewUser ? 'Sign Up' : 'Sign In'}
+      </SubmitButton>
     </motion.form>
   );
 };
@@ -78,11 +121,13 @@ export default function LoginPage() {
   const handleAuthSubmit = (e: React.FormEvent, formData: any) => {
     e.preventDefault();
     setIsLoading(true);
+
     if (isNewUser && formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       setIsLoading(false);
       return;
     }
+
     setTimeout(() => {
       console.log('Form data submitted:', formData);
       login();
@@ -92,44 +137,42 @@ export default function LoginPage() {
 
   return (
     <div className="w-full h-screen overflow-hidden">
-
-{/* MOBILE VIEW */}
-<div className="block md:hidden w-full min-h-screen">
-  <Vortex
-    backgroundColor="black"
-    particleCount={500}
-    containerClassName="w-full min-h-screen flex flex-col justify-center items-center"
-  >
-    <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/60 border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden mx-4">
-      <Meteors number={20} />
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-white">The Symposia</h1>
-        <p className="mt-2 text-sm text-gray-300">
-          {isNewUser
-            ? 'Create a new account to begin'
-            : 'Welcome back! Please sign in.'}
-        </p>
-      </div>
-
-      <AnimatePresence mode="wait">
-        <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
-      </AnimatePresence>
-
-      <div className="text-sm text-center">
-        <button
-          onClick={() => setIsNewUser(!isNewUser)}
-          className="font-medium text-cyan-400 hover:text-cyan-300"
-          disabled={isLoading}
+      {/* MOBILE VIEW */}
+      <div className="block md:hidden w-full min-h-screen">
+        <Vortex
+          backgroundColor="black"
+          particleCount={500}
+          containerClassName="w-full min-h-screen flex flex-col justify-center items-center"
         >
-          {isNewUser
-            ? 'Already have an account? Sign in'
-            : "Don't have an account? Sign up"}
-        </button>
-      </div>
-    </div>
-  </Vortex>
-</div>
+          <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/60 border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden mx-4">
+            <Meteors number={20} />
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-white">The Symposia</h1>
+              <p className="mt-2 text-sm text-gray-300">
+                {isNewUser
+                  ? 'Create a new account to begin'
+                  : 'Welcome back! Please sign in.'}
+              </p>
+            </div>
 
+            <AnimatePresence mode="wait">
+              <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
+            </AnimatePresence>
+
+            <div className="text-sm text-center">
+              <button
+                onClick={() => setIsNewUser(!isNewUser)}
+                className="font-medium text-cyan-400 hover:text-cyan-300"
+                disabled={isLoading}
+              >
+                {isNewUser
+                  ? 'Already have an account? Sign in'
+                  : "Don't have an account? Sign up"}
+              </button>
+            </div>
+          </div>
+        </Vortex>
+      </div>
 
       {/* DESKTOP VIEW */}
       <div className="hidden md:flex w-full h-screen">
@@ -137,10 +180,10 @@ export default function LoginPage() {
         <div className="w-1/2 h-full">
           <Vortex
             backgroundColor="rgba(0,0,0,0.05)"
-            particleCount={700}        // bigger vortex
+            particleCount={700}
             baseHue={210}
             hueRange={60}
-            baseSpeed={0.0003}          // slower rotation
+            baseSpeed={0.0003}
             speedRange={0.008}
             baseRadius={1.0}
             radiusRange={4.5}
@@ -176,7 +219,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

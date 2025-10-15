@@ -55,3 +55,55 @@ html {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
+
+/* === Custom Dynamic Pointer Cursor with Trail === */
+body {
+  cursor: none; /* hide default browser cursor */
+}
+
+/* Pointer (styled arrow) */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-left: 2px solid cyan;
+  border-bottom: 2px solid cyan;
+  box-shadow: 0 0 10px cyan;
+  transition: transform 0.15s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Soft trailing ring behind pointer */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 2px solid cyan;
+  opacity: 0.25;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out;
+  filter: blur(1px);
+}
+
+/* Hover glow interaction */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  border-color: white;
+  box-shadow: 0 0 15px white;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.2);
+}
+
+/* Optional: subtle click feedback (expand + fade) */
+.custom-cursor.click {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.5);
+  opacity: 0.8;
+}

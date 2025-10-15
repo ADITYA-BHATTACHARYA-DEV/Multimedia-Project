@@ -8,3 +8,4 @@ dist
 # misc
 *.log
 .DS_Store
+.env.local

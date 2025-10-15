@@ -1,4 +1,4 @@
-import topics from "@/data/topics.json";
+import topicsData from '../data/topics.json';
 
 export type CaptionTrack = {
   label: string;
@@ -14,14 +14,17 @@ export type Topic = {
   videoUrl: string;
   posterUrl?: string;
   captions?: CaptionTrack[];
-  description: string;
+  description?: string;
   transcript?: string;
+  photos?: string[];
+  discoveries?: string[];
 };
 
-export function allTopics(): Topic[] {
-  return topics as Topic[];
-}
+export const allTopics = (): Topic[] => {
+  // Convert JSON into typed objects
+  return topicsData as Topic[];
+};
 
-export function findTopic(slug: string): Topic | undefined {
-  return (topics as Topic[]).find(t => t.slug === slug);
-}
+export const getTopicBySlug = (slug: string): Topic | undefined => {
+  return allTopics().find(t => t.slug === slug);
+};

@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
   "/about/page": "app/about/page.js",
-  "/topics/[slug]/page": "app/topics/[slug]/page.js"
+  "/topics/[slug]/page": "app/topics/[slug]/page.js",
+  "/api/groq-chat/route": "app/api/groq-chat/route.js"
 }

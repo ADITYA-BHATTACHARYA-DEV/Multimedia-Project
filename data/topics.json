@@ -32,5 +32,91 @@
     ],
     "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
     "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+   {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
   }
+
 ]
