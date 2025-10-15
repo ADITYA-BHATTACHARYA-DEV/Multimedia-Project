@@ -93,42 +93,43 @@ export default function LoginPage() {
   return (
     <div className="w-full h-screen overflow-hidden">
 
-      {/* MOBILE VIEW */}
-      <div className="block md:hidden">
-        <Vortex
-          backgroundColor="black"
-          particleCount={500}
-          containerClassName="flex items-center justify-center w-full h-full"
-        >
-          <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/[0.6] border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden">
-            <Meteors number={20} />
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-white">The Symposia</h1>
-              <p className="mt-2 text-sm text-gray-300">
-                {isNewUser
-                  ? 'Create a new account to begin'
-                  : 'Welcome back! Please sign in.'}
-              </p>
-            </div>
-
-            <AnimatePresence mode="wait">
-              <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
-            </AnimatePresence>
-
-            <div className="text-sm text-center">
-              <button
-                onClick={() => setIsNewUser(!isNewUser)}
-                className="font-medium text-cyan-400 hover:text-cyan-300"
-                disabled={isLoading}
-              >
-                {isNewUser
-                  ? 'Already have an account? Sign in'
-                  : "Don't have an account? Sign up"}
-              </button>
-            </div>
-          </div>
-        </Vortex>
+{/* MOBILE VIEW */}
+<div className="block md:hidden w-full min-h-screen">
+  <Vortex
+    backgroundColor="black"
+    particleCount={500}
+    containerClassName="w-full min-h-screen flex flex-col justify-center items-center"
+  >
+    <div className="relative w-full max-w-md p-8 space-y-6 bg-gray-900/60 border border-gray-700 rounded-2xl shadow-lg backdrop-blur-sm overflow-hidden mx-4">
+      <Meteors number={20} />
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-white">The Symposia</h1>
+        <p className="mt-2 text-sm text-gray-300">
+          {isNewUser
+            ? 'Create a new account to begin'
+            : 'Welcome back! Please sign in.'}
+        </p>
       </div>
+
+      <AnimatePresence mode="wait">
+        <AuthForm key={isNewUser ? 'signup' : 'signin'} isNewUser={isNewUser} onSubmit={handleAuthSubmit} isLoading={isLoading} />
+      </AnimatePresence>
+
+      <div className="text-sm text-center">
+        <button
+          onClick={() => setIsNewUser(!isNewUser)}
+          className="font-medium text-cyan-400 hover:text-cyan-300"
+          disabled={isLoading}
+        >
+          {isNewUser
+            ? 'Already have an account? Sign in'
+            : "Don't have an account? Sign up"}
+        </button>
+      </div>
+    </div>
+  </Vortex>
+</div>
+
 
       {/* DESKTOP VIEW */}
       <div className="hidden md:flex w-full h-screen">
@@ -136,13 +137,13 @@ export default function LoginPage() {
         <div className="w-1/2 h-full">
           <Vortex
             backgroundColor="rgba(0,0,0,0.05)"
-            particleCount={1000}        // bigger vortex
+            particleCount={700}        // bigger vortex
             baseHue={210}
             hueRange={60}
             baseSpeed={0.0003}          // slower rotation
             speedRange={0.008}
-            baseRadius={1.5}
-            radiusRange={5}
+            baseRadius={1.0}
+            radiusRange={4.5}
             containerClassName="w-full h-full flex items-center justify-start px-24"
           >
             <div className="text-white text-left max-w-xl">
