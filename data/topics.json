@@ -38,7 +38,41 @@
     "title": "Multimedia Learning",
     "summary": "Why pairing video with concise text improves retention.",
     "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "posterUrl": "https://external-preview.redd.it/Z3AoSYd0lMvins0SV_gt99qHbu2nLTkUGh5CMBhy28E.jpg?width=1080&crop=smart&auto=webp&s=951e3ae929a24c2ec0156dd9663589efd0884d2d",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://www.hdwallpapers.in/download/really_cool_landscape_wallpaper_4k_hd-3840x2160.jpg",
+    "captions": [
+      {
+        "label": "English",
+        "src": "/captions/learning-en.vtt",
+        "srclang": "en",
+        "default": true
+      }
+    ],
+    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
+    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
+  },
+  {
+    "slug": "multimedia-learning",
+    "title": "Multimedia Learning",
+    "summary": "Why pairing video with concise text improves retention.",
+    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "posterUrl": "https://i.pinimg.com/736x/e2/ec/31/e2ec318333608d137b47ce8f2a83eed0.jpg",
     "captions": [
       {
         "label": "English",
@@ -72,41 +106,7 @@
     "title": "Multimedia Learning",
     "summary": "Why pairing video with concise text improves retention.",
     "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
-    "captions": [
-      {
-        "label": "English",
-        "src": "/captions/learning-en.vtt",
-        "srclang": "en",
-        "default": true
-      }
-    ],
-    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
-    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
-  },
-  {
-    "slug": "multimedia-learning",
-    "title": "Multimedia Learning",
-    "summary": "Why pairing video with concise text improves retention.",
-    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
-    "captions": [
-      {
-        "label": "English",
-        "src": "/captions/learning-en.vtt",
-        "srclang": "en",
-        "default": true
-      }
-    ],
-    "description": "Research shows that dual-channel input (visual + verbal) supports comprehension. This topic aligns the video narrative with supporting text below.",
-    "transcript": "This segment introduces Mayer's cognitive theory, emphasizing coherence, signaling, and modality principles..."
-  },
-  {
-    "slug": "multimedia-learning",
-    "title": "Multimedia Learning",
-    "summary": "Why pairing video with concise text improves retention.",
-    "videoUrl": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-    "posterUrl": "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-fall-nature-scenery-free-image.jpeg?w=2210&quality=70",
+    "posterUrl": "https://img.freepik.com/premium-photo/captivating-scenery-ultra-hd-4k-wallpaper-desktop_1234738-478353.jpg?w=360",
     "captions": [
       {
         "label": "English",
